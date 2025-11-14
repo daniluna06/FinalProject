@@ -1,0 +1,11 @@
+Model Information:
+* title:	Used Coffee Machine
+* source:	https://sketchfab.com/3d-models/used-coffee-machine-87b1c9713d874fd9b4e63515ff269b68
+* author:	Pablo.Esteban.Murillo (https://sketchfab.com/Pablo.Esteban.Murillo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Used Coffee Machine" (https://sketchfab.com/3d-models/used-coffee-machine-87b1c9713d874fd9b4e63515ff269b68) by Pablo.Esteban.Murillo (https://sketchfab.com/Pablo.Esteban.Murillo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
