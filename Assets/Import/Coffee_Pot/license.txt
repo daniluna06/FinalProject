@@ -1,0 +1,8 @@
+Model Information:
+* title:	Coffee Pot
+* source:	https://sketchfab.com/3d-models/coffee-pot-bf82f5a30eee4849a7ab8869bd43b1a3
+* author:	nurakid (https://sketchfab.com/nurakid)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
