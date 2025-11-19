@@ -1,25 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ui_switch : MonoBehaviour
 {
     public GameObject Canvas;
-    private int index = 3;
-    // Start is called before the first frame update
+    private int index = 0;
+
     void Start()
     {
         Canvas.SetActive(false);
+
         int count = Canvas.transform.childCount;
 
         // Hide all children
         for (int i = 0; i < count; i++)
-        {
             Canvas.transform.GetChild(i).gameObject.SetActive(false);
-        }
 
-        // Start with the first child active
+        // Start with first child
         if (count > 0)
         {
             index = 0;
@@ -27,46 +23,24 @@ public class ui_switch : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // 
-        if (Input.GetKeyDown(KeyCode.Space)) //test input
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Canvas.SetActive(true);
+
             int count = Canvas.transform.childCount;
 
-            // Hide the current child
+            // Hide current
             Canvas.transform.GetChild(index).gameObject.SetActive(false);
 
-            // Move to next index (wrap around)
+            // Move to next (wrap)
             index = (index + 1) % count;
 
-            // Show the new child
+            // Show next
             Canvas.transform.GetChild(index).gameObject.SetActive(true);
 
             Debug.Log("Showing child index: " + index);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Z)) //test input
-        {
-            Canvas.SetActive(true);
-
-            // Hide the current child
-            Canvas.transform.GetChild(index).gameObject.SetActive(false);
-
-            // Move to next index (wrap around)
-
-            // Show the new child
-            Canvas.transform.GetChild(3).gameObject.SetActive(true);
-
-            Debug.Log("Showing child index: " + 3);
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Canvas.SetActive(false);
         }
     }
 }
