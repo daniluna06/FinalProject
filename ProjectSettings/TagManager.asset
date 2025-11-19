@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - QDSUIBackplateGradient
+  - QDSUIToggleBorderlessButton
+  - Recipe1
+  - Recipe2
+  - Recipe3
+  - Recipe4
   layers:
   - Default
   - TransparentFX
