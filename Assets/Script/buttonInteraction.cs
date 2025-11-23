@@ -7,6 +7,12 @@ using UnityEngine.UI;
 
 public class buttonInteraction : MonoBehaviour
 {
+    void OnClick(ParticleSystem part)
+    {
+        part = GetComponent<ParticleSystem>();
+        part.Play();
+    }
+    /*
     [SerializeField] private Image myButton;
     [SerializeField] private Color downColor;
     [SerializeField] private Color defaultColor;
@@ -42,6 +48,6 @@ public class buttonInteraction : MonoBehaviour
             myButton.color = defaultColor; //returns button to original color
         }
         
-    }
+    }*/
 
 }

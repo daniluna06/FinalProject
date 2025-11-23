@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class VRButtonAction : MonoBehaviour
 {
-    public void OnButtonPressed(){
+    public void OnButtonPressed(ParticleSystem part){
+        part = GetComponent<ParticleSystem>();
+        part.Play();
         Debug.Log("BUTTON PRESSED");
     }
 }
