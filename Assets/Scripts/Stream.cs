@@ -10,7 +10,10 @@ public class Stream : MonoBehaviour
 
     // How fast it wiggles
     public float wobbleFrequency = 10f;
-
+	
+	// How fast the cup fills when hit by this stream
+	public float fillRate = 0.25f;
+	
     private bool pouring = false;
 
     private void Awake()
@@ -49,24 +52,39 @@ public class Stream : MonoBehaviour
         // Start at the spout
         Vector3 start = transform.position;
 
-        // For now, no collider needed:
-        // Just go straight down by maxLength
+        // Raycast straight down to find where the stream hits
+        RaycastHit hit;
         Vector3 end = start + Vector3.down * maxLength;
+
+        if (Physics.Raycast(start, Vector3.down, out hit, maxLength))
+        {
+            end = hit.point;
+
+            // See if we hit a cup
+            CupFill cup = hit.collider.GetComponentInParent<CupFill>();
+
+            if (cup != null)
+			{
+				cup.AddCoffee(Time.deltaTime * fillRate);
+
+				// If cup is now full, we can optionally stop this stream
+				if (cup.IsFull)
+				{
+					End();
+					return;
+				}
+			}
+        }
 
         // Middle point halfway between start and end
         Vector3 middle = (start + end) * 0.5f;
 
-        // Choose a sideways direction to wobble in.
-        // transform.right = "sideways" relative to the pot/stream object.
+        // Wobble sideways (relative to the pot/stream transform)
         Vector3 wobbleDir = transform.right;
-
-        // Compute wobble offset using a sine wave over time
         float wobble = Mathf.Sin(Time.time * wobbleFrequency) * wobbleAmplitude;
-
-        // Apply wobble sideways to the middle point
         middle += wobbleDir * wobble;
 
-        // Assign all 3 positions to the LineRenderer
+        // Set the 3 positions
         lineRenderer.SetPosition(0, start);
         lineRenderer.SetPosition(1, middle);
         lineRenderer.SetPosition(2, end);
