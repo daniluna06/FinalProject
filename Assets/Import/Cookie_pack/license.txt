@@ -1,0 +1,8 @@
+Model Information:
+* title:	Cookie pack
+* source:	https://sketchfab.com/3d-models/cookie-pack-20ac82bf4d4d4294bcdefa0287816750
+* author:	Bagel (https://sketchfab.com/Green_Katydid)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Card_Reader - Ile améthyste
+* source:	https://sketchfab.com/3d-models/card-reader-ile-amethyste-835699d7f39345779a7f729ffc04c7ba
+* author:	oriiiiii (https://sketchfab.com/oriiiiii)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Card_Reader - Ile améthyste" (https://sketchfab.com/3d-models/card-reader-ile-amethyste-835699d7f39345779a7f729ffc04c7ba) by oriiiiii (https://sketchfab.com/oriiiiii) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
