@@ -1,0 +1,11 @@
+Model Information:
+* title:	cash_register
+* source:	https://sketchfab.com/3d-models/cash-register-d149a3c97dd944ad9d0a6d6ca7037663
+* author:	OTISRAWTDESIGNS (https://sketchfab.com/OTISRAWTDESIGNS)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "cash_register" (https://sketchfab.com/3d-models/cash-register-d149a3c97dd944ad9d0a6d6ca7037663) by OTISRAWTDESIGNS (https://sketchfab.com/OTISRAWTDESIGNS) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

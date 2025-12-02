@@ -1,0 +1,8 @@
+Model Information:
+* title:	Pls Donate Tip Jar
+* source:	https://sketchfab.com/3d-models/pls-donate-tip-jar-44d0587cf54d43729b87f0ca3b9b9b9a
+* author:	metalian0 (https://sketchfab.com/metalian0)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
