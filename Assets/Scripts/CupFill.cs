@@ -6,7 +6,7 @@ public class CupFill : MonoBehaviour
     public Transform coffeeLiquid;
 
     // How fast the cup fills (0 to 1 per second)
-    public float fillSpeed = 0.25f;
+    public float fillSpeed = 0.5f;
 
     // 0 = empty, 1 = full
     [Range(0f, 1f)]

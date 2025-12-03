@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Recipes : MonoBehaviour
-
-
+[CreateAssetMenu(fileName = "New Recipe", menuName = "Coffee/Recipe")]
+public class Recipes : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum IngredientType
     {
-        
+        Coffee,
+        WholeMilk, OatMilk, AlmondMilk,
+        CaramelSyrup, VanillaSyrup, LavenderSyrup, MochaSyrup
     }
+    public string recipeName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public List<IngredientType> requiredIngredients;
 }
