@@ -53,7 +53,8 @@ LineRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials: []
+  m_Materials:
+  - {fileID: 2100000, guid: 47b48f997edf44d4988783862a57aca4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,8 +136,8 @@ LineRenderer:
       m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 1
-    numCapVertices: 1
+    numCornerVertices: 4
+    numCapVertices: 4
     alignment: 0
     textureMode: 1
     textureScale: {x: 1, y: 1}
@@ -161,5 +162,5 @@ MonoBehaviour:
   maxLength: 2
   lineRenderer: {fileID: 0}
   wobbleAmplitude: 0.01
-  wobbleFrequency: 2
-  fillRate: 1.5
+  wobbleFrequency: 4
+  fillRate: 0.5
