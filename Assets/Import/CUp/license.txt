@@ -1,0 +1,11 @@
+Model Information:
+* title:	CUp
+* source:	https://sketchfab.com/3d-models/cup-6454195679d048e097e03d633255b70b
+* author:	mscheeswizrd (https://sketchfab.com/mscheeswizrd)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "CUp" (https://sketchfab.com/3d-models/cup-6454195679d048e097e03d633255b70b) by mscheeswizrd (https://sketchfab.com/mscheeswizrd) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
