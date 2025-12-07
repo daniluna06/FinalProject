@@ -12,6 +12,5 @@ public class Recipes : ScriptableObject
         CaramelSyrup, VanillaSyrup, LavenderSyrup, MochaSyrup
     }
     public string recipeName;
-
     public List<IngredientType> requiredIngredients;
 }
