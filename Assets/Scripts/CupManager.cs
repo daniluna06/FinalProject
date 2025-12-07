@@ -11,7 +11,6 @@ public class CupManager : MonoBehaviour
 
     private void Start()
     {
-        SpawnCup();
     }
 
     public void SpawnCup()

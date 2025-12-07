@@ -5,8 +5,12 @@ using UnityEngine;
 public class DestroyCup : MonoBehaviour
 {
     private bool hasBeenDestroyed = false;
+
     private void OnTriggerEnter(Collider other)
     {
+        // Only destroy when entering the destroy zone
+        if (!other.CompareTag("Trash")) return;
+
         if (hasBeenDestroyed) return;
         hasBeenDestroyed = true;
 
