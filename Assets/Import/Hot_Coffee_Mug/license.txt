@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hot Coffee Mug
+* source:	https://sketchfab.com/3d-models/hot-coffee-mug-739a4975a13a456a92147fab7caa48d7
+* author:	parthivs199 (https://sketchfab.com/parthivs199)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hot Coffee Mug" (https://sketchfab.com/3d-models/hot-coffee-mug-739a4975a13a456a92147fab7caa48d7) by parthivs199 (https://sketchfab.com/parthivs199) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
