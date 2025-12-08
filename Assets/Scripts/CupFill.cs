@@ -19,12 +19,6 @@ public class CupFill : MonoBehaviour
 
     private void Start()
     {
-        if (coffeeLiquid == null)
-        {
-            Debug.LogWarning("CupFill: coffeeLiquid is not assigned.");
-            return;
-        }
-
         // Whatever scale you set in the editor = FULL
         fullScale = coffeeLiquid.localScale;
 
