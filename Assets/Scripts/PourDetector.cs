@@ -35,7 +35,6 @@ public class PourDetector : MonoBehaviour
 
     private void StartPour()
     {
-        Debug.Log("Start Pour");
         currentStream = CreateStream();
         if (currentStream != null)
         {
@@ -65,7 +64,6 @@ public class PourDetector : MonoBehaviour
     {
         if (streamPrefab == null || origin == null)
         {
-            Debug.LogWarning("StreamPrefab or Origin not assigned on PourDetector.");
             return null;
         }
 
