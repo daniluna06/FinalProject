@@ -1,0 +1,11 @@
+Model Information:
+* title:	Table
+* source:	https://sketchfab.com/3d-models/table-c4853a8119ea4b138a8e4f4ab3dc381d
+* author:	Dimas1731 (https://sketchfab.com/Dimas170131)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Table" (https://sketchfab.com/3d-models/table-c4853a8119ea4b138a8e4f4ab3dc381d) by Dimas1731 (https://sketchfab.com/Dimas170131) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
