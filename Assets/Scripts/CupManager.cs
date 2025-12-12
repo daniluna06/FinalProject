@@ -9,10 +9,6 @@ public class CupManager : MonoBehaviour
 
     private GameObject currentCup;
 
-    private void Start()
-    {
-    }
-
     public void SpawnCup()
     {
         if (currentCup == null)

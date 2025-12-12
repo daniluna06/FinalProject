@@ -4,6 +4,7 @@ using Oculus.Interaction;
 public class PlacementCheck : MonoBehaviour
 {
     public Transform targetPlace;
+
     public float solvedDistance = 0.05f;   // Distance to snap/solve
     public float unsolvedDistance = 0.07f; // Distance required to "un-solve"
     
@@ -16,6 +17,8 @@ public class PlacementCheck : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();
+        if (targetPlace == null)
+            targetPlace = GameObject.Find("cupPlace").transform;
     }
 
     void Update()
