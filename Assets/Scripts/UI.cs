@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
-    public GameObject Canvas;
+    public GameObject Recipe;
 
     void Start()
     {
@@ -17,25 +17,25 @@ public class UI : MonoBehaviour
     {
         if(other.tag == "Recipe1")
         {
-            Canvas.transform.GetChild(0).gameObject.SetActive(true);
+            Recipe.transform.GetChild(0).gameObject.SetActive(true);
         }
         else if (other.tag =="Recipe2"){
-            Canvas.transform.GetChild(1).gameObject.SetActive(true);      
+            Recipe.transform.GetChild(1).gameObject.SetActive(true);      
         }
         else if (other.tag =="Recipe3"){
-            Canvas.transform.GetChild(2).gameObject.SetActive(true);      
+            Recipe.transform.GetChild(2).gameObject.SetActive(true);      
         }
 	else if (other.tag =="Recipe4"){
-            Canvas.transform.GetChild(3).gameObject.SetActive(true); 
+            Recipe.transform.GetChild(3).gameObject.SetActive(true); 
 	}    
 
         print("entered " + other.gameObject.name);
-        Canvas.transform.gameObject.SetActive(true);
+        Recipe.transform.gameObject.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         print("leaving " + other.gameObject.name);
-        Canvas.transform.gameObject.SetActive(false);
+        Recipe.transform.gameObject.SetActive(false);
     }
 }
