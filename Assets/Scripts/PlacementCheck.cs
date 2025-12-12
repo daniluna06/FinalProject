@@ -7,9 +7,10 @@ public class PlacementCheck : MonoBehaviour
 
     public float solvedDistance = 0.05f;   // Distance to snap/solve
     public float unsolvedDistance = 0.07f; // Distance required to "un-solve"
+	public RecipeUIController recipeUIController;
     
     public bool isSolved;
-
+	
     private Rigidbody rb;
     private Collider col;
 
@@ -60,6 +61,11 @@ public class PlacementCheck : MonoBehaviour
 
         isSolved = true;
         Debug.Log("Cup placed: solved = true");
+
+	if (recipeUIController != null)
+    	{
+        	recipeUIController.OnRecipeCompletedAdvance();
+    	}
     }
 
     void RestoreCup()

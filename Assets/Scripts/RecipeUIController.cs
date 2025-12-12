@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class RecipeUIController : MonoBehaviour
 {
-    public GameObject canvasRoot;     // your recipe canvas
-    public GameObject[] recipePanels; // size 4
-
+    public GameObject[] recipePanels; // 3D objects
     private int recipeIndex = 0;
 
     private void Start()
@@ -16,16 +14,13 @@ public class RecipeUIController : MonoBehaviour
     {
         recipeIndex = Mathf.Clamp(index, 0, recipePanels.Length - 1);
 
-        canvasRoot.SetActive(true);
         for (int i = 0; i < recipePanels.Length; i++)
             recipePanels[i].SetActive(i == recipeIndex);
     }
 
     public void OnIngredientAdded(Recipes.IngredientType ingredient)
     {
-        // For now just ensure UI is visible.
-        // Later you can update TMP text/icons within the active panel.
-        canvasRoot.SetActive(true);
+        ShowRecipe(recipeIndex); 
     }
 
     public void OnRecipeCompletedAdvance()
