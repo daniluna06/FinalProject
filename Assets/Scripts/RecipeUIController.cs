@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class RecipeUIController : MonoBehaviour
 {
-    public GameObject[] recipePanels; // 3D objects
+    public GameObject[] recipePanels; // 3D objects representing recipe steps
     private int recipeIndex = 0;
 
     private void Start()
     {
-        ShowRecipe(0);
+        recipeIndex = 0;
+        ShowRecipe(recipeIndex);
     }
 
     public void ShowRecipe(int index)
@@ -20,11 +21,22 @@ public class RecipeUIController : MonoBehaviour
 
     public void OnIngredientAdded(Recipes.IngredientType ingredient)
     {
-        ShowRecipe(recipeIndex); 
+        // Advance to next cube
+        recipeIndex++;
+        recipeIndex = Mathf.Clamp(recipeIndex, 0, recipePanels.Length - 1);
+        ShowRecipe(recipeIndex);
     }
 
     public void OnRecipeCompletedAdvance()
     {
-        ShowRecipe(recipeIndex + 1);
+        recipeIndex++;
+        recipeIndex = Mathf.Clamp(recipeIndex, 0, recipePanels.Length - 1);
+        ShowRecipe(recipeIndex);
+    }
+
+    public void ResetRecipe()
+    {
+        recipeIndex = 0;
+        ShowRecipe(recipeIndex);
     }
 }
