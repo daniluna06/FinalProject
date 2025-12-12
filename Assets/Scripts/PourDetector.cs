@@ -1,79 +1,91 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PourDetector : MonoBehaviour
 {
     [Header("Pour Settings")]
-    public float pourThreshold = 45f;      // angle in degrees
-    public Transform origin;              // where the stream comes out
-    public GameObject streamPrefab;       // prefab with a Stream script
+    public float pourThreshold = 45f;
+    public Transform origin;
+    public GameObject streamPrefab;
+
+    [Header("Targeting")]
+    public float cupDetectDistance = 0.6f;     // adjust
+    public LayerMask cupLayerMask;             // set to Cup layer (recommended)
 
     private bool isPouring = false;
     private Stream currentStream = null;
 
+    private CupController currentCup = null;   // NEW
+    private bool registeredThisPour = false;   // NEW
+
     private void Update()
     {
         float angle = CalculatePourAngle();
-        // pour when tilted more than threshold
         bool pourCheck = angle > pourThreshold;
 
         if (isPouring != pourCheck)
         {
             isPouring = pourCheck;
 
-            if (isPouring)
-            {
-                StartPour();
-            }
-            else
-            {
-                EndPour();
-            }
+            if (isPouring) StartPour();
+            else EndPour();
+        }
+
+        // While pouring, fill cup if we have one
+        if (isPouring && currentCup != null)
+        {
+            currentCup.AddCoffee(Time.deltaTime);
         }
     }
 
     private void StartPour()
     {
-        currentStream = CreateStream();
-        if (currentStream != null)
+        registeredThisPour = false;
+        currentCup = FindCupUnderOrigin();
+
+        // Register coffee ONCE when pour starts (if cup is present)
+        if (currentCup != null && !registeredThisPour)
         {
-            currentStream.Begin();
+            registeredThisPour = true;
+            currentCup.RegisterIngredient(Recipes.IngredientType.Coffee);
         }
+
+        currentStream = CreateStream();
+        if (currentStream != null) currentStream.Begin();
     }
 
     private void EndPour()
     {
-        Debug.Log("End Pour");
         if (currentStream != null)
         {
             currentStream.End();
             currentStream = null;
         }
+
+        currentCup = null;
+        registeredThisPour = false;
     }
 
-    // Angle between pot's "up" and world down
+    private CupController FindCupUnderOrigin()
+    {
+        if (origin == null) return null;
+
+        if (Physics.Raycast(origin.position, Vector3.down, out RaycastHit hit, cupDetectDistance, cupLayerMask))
+        {
+            return hit.collider.GetComponentInParent<CupController>();
+        }
+        return null;
+    }
+
     private float CalculatePourAngle()
     {
-        // -transform.up is the direction the opening of the pot points
-        // Vector3.down is world down
         return Vector3.Angle(-transform.up, Vector3.down);
     }
 
     private Stream CreateStream()
     {
-        if (streamPrefab == null || origin == null)
-        {
-            return null;
-        }
+        if (streamPrefab == null || origin == null) return null;
 
-        GameObject streamObject = Instantiate(
-            streamPrefab,
-            origin.position,
-            Quaternion.identity,
-            transform
-        );
-
+        GameObject streamObject = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);
         return streamObject.GetComponent<Stream>();
     }
 }
