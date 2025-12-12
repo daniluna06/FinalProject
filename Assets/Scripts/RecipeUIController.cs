@@ -45,7 +45,8 @@ public class RecipeUIController : MonoBehaviour
             {
                 // Activate only the current cube
                 recipePanels[i].SetActive(i == recipeIndex);
-                Debug.Log($"[RecipeUIController] Cube {i} active? {recipePanels[i].activeSelf}");
+                Debug.Log($"[RecipeUIController] {recipePanels[i].name} (index {i}) active? {recipePanels[i].activeSelf}");
+
             }
         }
     }
