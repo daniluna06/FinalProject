@@ -27344,6 +27344,7 @@ GameObject:
   - component: {fileID: 1903065815}
   - component: {fileID: 1903065814}
   - component: {fileID: 1903065817}
+  - component: {fileID: 1903065818}
   m_Layer: 0
   m_Name: cupPlace
   m_TagString: Untagged
@@ -27449,6 +27450,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65f42f8fbfe50d849a7a218329d74340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1903065818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903065812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04d4c18a4e1d8249a153b229ca9ee44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeUI: {fileID: 552262677}
 --- !u!1001 &1905157733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28445,6 +28459,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cup Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 316229520691413182, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_TagString
+      value: Cup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241395864163186312, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.012000818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241395864163186312, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07699989
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241395864163186312, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.12899987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241395864163186312, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99961996
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241395864163186312, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0000000027939675
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241395864163186312, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000029802319
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241395864163186312, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.027567334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241395864163186312, guid: 4fed7d926183083478bf4a6dd4639ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3.159
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29434,7 +29484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2071777069
 MonoBehaviour:
   m_ObjectHideFlags: 0

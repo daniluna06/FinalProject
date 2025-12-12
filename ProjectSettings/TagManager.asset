@@ -11,6 +11,7 @@ TagManager:
   - Recipe3
   - Recipe4
   - Trash
+  - Cup
   layers:
   - Default
   - TransparentFX
