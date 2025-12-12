@@ -10007,13 +10007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4193a4adfd001444bbeb067144da08bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasRoot: {fileID: 763396605}
-  recipePanels:
-  - {fileID: 937356286}
-  - {fileID: 856159626}
-  - {fileID: 1891708932}
-  - {fileID: 1328848319}
-  recipeIndex: 0
 --- !u!114 &763396607
 MonoBehaviour:
   m_ObjectHideFlags: 0
