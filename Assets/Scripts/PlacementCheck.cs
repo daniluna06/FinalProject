@@ -1,81 +1,165 @@
-using UnityEngine;
-using Oculus.Interaction;
+using UnityEngine; 
 
-public class PlacementCheck : MonoBehaviour
-{
-    public Transform targetPlace;
+using Oculus.Interaction; 
 
-    public float solvedDistance = 0.05f;   // Distance to snap/solve
-    public float unsolvedDistance = 0.07f; // Distance required to "un-solve"
-	public RecipeUIController recipeUIController;
-    
-    public bool isSolved;
-	
-    private Rigidbody rb;
-    private Collider col;
+  
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        col = GetComponent<Collider>();
-        if (targetPlace == null)
-            targetPlace = GameObject.Find("cupPlace").transform;
-    }
+public class PlacementCheck : MonoBehaviour 
 
-    void Update()
-    {
-        float distance = Vector3.Distance(transform.position, targetPlace.position);
+{ 
 
-        // ------------------------------------------------------------
-        // SOLVE (when cup gets close to placement point)
-        // ------------------------------------------------------------
-        if (!isSolved && distance < solvedDistance)
-        {
-            SnapToPlace();
-        }
+    public Transform targetPlace; 
 
-        // ------------------------------------------------------------
-        // UNSOLVE (when cup is moved away again)
-        // ------------------------------------------------------------
-        if (isSolved && distance > unsolvedDistance)
-        {
-            RestoreCup();
-        }
-    }
+  
 
-    void SnapToPlace()
-    {
-        // Release from any grab interactors
-        var interactable = GetComponent<GrabInteractable>();
-        if (interactable != null)
-        {
-            foreach (var interactor in interactable.Interactors)
-                if (interactor is GrabInteractor gi)
-                    gi.Unselect();
-        }
+    public float solvedDistance = 0.05f;   // Distance to snap/solve 
 
-        // Move & lock in place
-        transform.SetPositionAndRotation(targetPlace.position, targetPlace.rotation);
-        rb.constraints = RigidbodyConstraints.FreezeAll;
-        col.enabled = false;
+    public float unsolvedDistance = 0.07f; // Distance required to "un-solve" 
 
-        isSolved = true;
-        Debug.Log("Cup placed: solved = true");
+	public RecipeUIController recipeUIController; 
 
-	if (recipeUIController != null)
-    	{
-        	recipeUIController.OnRecipeCompletedAdvance();
-    	}
-    }
+     
 
-    void RestoreCup()
-    {
-        // Allow physics + grabbing again
-        rb.constraints = RigidbodyConstraints.None;
-        col.enabled = true;
-        targetPlace.gameObject.SetActive(true);
+    public bool isSolved; 
 
-        isSolved = false;
-        Debug.Log("Cup removed: solved = false");
-    }
-}
+    private Rigidbody rb; 
+
+    private Collider col; 
+
+  
+
+    void Start() 
+
+    { 
+
+        rb = GetComponent<Rigidbody>(); 
+
+        col = GetComponent<Collider>(); 
+
+        if (targetPlace == null) 
+
+            targetPlace = GameObject.Find("cupPlace").transform; 
+
+    } 
+
+  
+
+    void Update() 
+
+    { 
+
+        float distance = Vector3.Distance(transform.position, targetPlace.position); 
+
+  
+
+        // ------------------------------------------------------------ 
+
+        // SOLVE (when cup gets close to placement point) 
+
+        // ------------------------------------------------------------ 
+
+        if (!isSolved && distance < solvedDistance) 
+
+        { 
+
+            SnapToPlace(); 
+
+        } 
+
+  
+
+        // ------------------------------------------------------------ 
+
+        // UNSOLVE (when cup is moved away again) 
+
+        // ------------------------------------------------------------ 
+
+        if (isSolved && distance > unsolvedDistance) 
+
+        { 
+
+            RestoreCup(); 
+
+        } 
+
+    } 
+
+  
+
+    void SnapToPlace() 
+
+    { 
+
+        // Release from any grab interactors 
+
+        var interactable = GetComponent<GrabInteractable>(); 
+
+        if (interactable != null) 
+
+        { 
+
+            foreach (var interactor in interactable.Interactors) 
+
+                if (interactor is GrabInteractor gi) 
+
+                    gi.Unselect(); 
+
+        } 
+
+  
+
+        // Move & lock in place 
+
+        transform.SetPositionAndRotation(targetPlace.position, targetPlace.rotation); 
+
+        rb.constraints = RigidbodyConstraints.FreezeAll; 
+
+        col.enabled = false; 
+
+  
+
+        isSolved = true; 
+
+        Debug.Log("Cup placed: solved = true"); 
+
+		var cupState = GetComponentInParent<CupState>(); 
+
+		if (cupState != null) cupState.MarkComplete(); 
+
+		  
+
+		  
+
+		if (recipeUIController != null) 
+
+		{ 
+
+			recipeUIController.OnRecipeCompletedAdvance(); 
+
+		} 
+
+	} 
+
+  
+
+    void RestoreCup() 
+
+    { 
+
+        // Allow physics + grabbing again 
+
+        rb.constraints = RigidbodyConstraints.None; 
+
+        col.enabled = true; 
+
+        targetPlace.gameObject.SetActive(true); 
+
+  
+
+        isSolved = false; 
+
+        Debug.Log("Cup removed: solved = false"); 
+
+    } 
+
+} 

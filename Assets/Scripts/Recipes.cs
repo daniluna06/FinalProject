@@ -9,7 +9,7 @@ public class Recipes : ScriptableObject
     {
         Coffee,
         WholeMilk, OatMilk, AlmondMilk,
-        CaramelSyrup, VanillaSyrup, LavenderSyrup, MochaSyrup
+        CaramelSyrup, LavenderSyrup, MochaSyrup
     }
     public string recipeName;
     public List<IngredientType> requiredIngredients;

@@ -14,6 +14,9 @@ public class RecipeCheck : MonoBehaviour
     [Header("Configuration")]
     // Drag your "Recipe 4" (and all other recipe assets) into this list in the Inspector
     public List<Recipes> knownRecipes; 
+	
+	[Header("References")]
+    [SerializeField] private CupState cupState;   // drag the Cup (with CupState) here
 
     void Update()
     {
@@ -21,7 +24,7 @@ public class RecipeCheck : MonoBehaviour
         // Press keys to simulate pouring ingredients
         if (Input.GetKeyDown(KeyCode.Z)) AddIngredient(Recipes.IngredientType.Coffee);
         if (Input.GetKeyDown(KeyCode.X)) AddIngredient(Recipes.IngredientType.WholeMilk);
-        if (Input.GetKeyDown(KeyCode.C)) AddIngredient(Recipes.IngredientType.VanillaSyrup);
+        if (Input.GetKeyDown(KeyCode.C)) AddIngredient(Recipes.IngredientType.MochaSyrup);
         if (Input.GetKeyDown(KeyCode.V)) AddIngredient(Recipes.IngredientType.CaramelSyrup);
         
         // Press Space to dump the cup
@@ -29,6 +32,12 @@ public class RecipeCheck : MonoBehaviour
         {
             runningIngredients.Clear();
             currentRecipe = "Empty";
+
+            if (cupState != null)
+                cupState.ResetDrink();
+            else
+                Debug.LogWarning("RecipeCheck: cupState not assigned!");
+
             Debug.Log("Cup emptied.");
         }
     }
@@ -55,6 +64,14 @@ public class RecipeCheck : MonoBehaviour
             {
                 currentRecipe = recipe.recipeName;
                 Debug.Log($"<color=green>RECIPE COMPLETE: {currentRecipe}</color>");
+				Debug.Log("[RecipeCheck] MarkComplete() on: " + (cupState ? cupState.gameObject.name : "NULL"));
+
+				if (cupState != null)
+					cupState.MarkComplete();
+				else
+					Debug.LogWarning("RecipeCheck: cupState not assigned!");
+
+
                 foundMatch = true;
                 break; // Stop looking, we found it
             }
